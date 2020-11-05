@@ -50,18 +50,21 @@ $sp-second: 425px;  // スマホ
 
     @include tab{
       width: 100%;
-      font-size: 20px;
+      height: auto;
+      line-height: 50px;
+      font-size: 22px;
       padding-left: 20px;
+      background-size: 100% 100%;
     }
 
     @include sp{
-      height: auto;
-      padding-left: 20px;
-      font-size: 18px;
-      line-height: initial;
-      padding-top: 15px;
-      padding-bottom: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+      padding-left: 0px;
+      height: 107px;
+      line-height: 107px;
     }
+
 }
 html{
 
@@ -409,21 +412,35 @@ body{
     }/*warp*/
   }/*header*/
 
+
   .mainvisual{
     background-image: url(../img/service/mv-mainvisual.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     height: 45vw;
     width: 100%;
     position: relative;
 
+    @include sp(){
+      background-size: 100% 100%;
+      height: 395px;
+      background-image: url(../img/common/mainvisual-2_sp.png);
+    }
+
 
     &_wrap{
       background-image: url(../img/service/mv-background.png);
-      background-size: contain;  
+      background-size: cover;  
       background-repeat: no-repeat;
       height: 45vw;
       width: 100%;
+
+
+      @include sp(){
+        background-size: 100% 100%;
+        height: 395px;
+        background-image: url(../img/common/mv-background_sp.png);
+      }
 
       .mv_inner_text{
         background-color: #FFFFFF;
@@ -455,10 +472,10 @@ body{
 
 
         @include sp{
-          max-width: 280px;
+          max-width: 306px;
           width: 90%;
-          padding: 25px 0px;
-          background-size: 250px 72px;
+          padding: 75px 0px 79px;
+          background-size: 240px 170px;
         }
 
 
@@ -466,14 +483,17 @@ body{
           font-weight: 900;
           font-size: 42px;
 
+          @include pc{
+            font-size: 38px;
+          }
+
           @include tab{
-            font-size: 30px;
+            font-size: 27px;
           }
 
           @include sp{
             font-size: 24px;
           }
-
         }/*inner_title*/
       }/*mv-inner-teext*/
     }
@@ -509,7 +529,9 @@ body{
     }
 
     @include sp{
-      margin-top: 65px; 
+      margin-top: 35px; 
+      margin-right: 15px;
+      margin-left: 15px;  
     }
 
     &_box{
@@ -526,6 +548,11 @@ body{
 
         @include tab{
           padding: 67px 30px 70px 30px;
+        }/*pc*/
+
+
+        @include sp-second(){
+          padding: 67px 18px 70px 18px;
         }/*pc*/
 
           h2{
@@ -575,6 +602,8 @@ body{
   }/*content*/
 
 
+
+
   .contact_wrap{
     margin-bottom: 94px;
     margin-top: 109px;
@@ -582,6 +611,7 @@ body{
     @include sp{
       margin-bottom: 70px;
       margin-top: 90px;
+      text-align: center;
     }
 
     .contact_title{
@@ -594,14 +624,26 @@ body{
       }/*tab*/
 
       @include sp{
-        font-size: 20px;
+        display: none;
       }
 
-      @include sp-second(){
-        font-size: 18px;
+
+    }
+
+    .contact_title_sp{
+      display: none;
+
+      @include sp{
+        display: block;
+        font-size: 20px;
+        margin-bottom: 16px;
+        width: 100%;
+        line-height: 1.6;
+        font-weight: 500;
       }
 
     }
+
 
     .btn{
         width: 708px;
@@ -616,12 +658,11 @@ body{
         }
 
         @include sp{
-          width: 80%;
+          width: 92.5%;
           margin: 0 auto;
         }
 
         @include sp-second(){
-          width: 280px;
         }
 
         a{
@@ -645,15 +686,11 @@ body{
 
             @include sp{
               font-size: 20px;
-              height: 65px;
-              line-height: 65px;
+              height: 67px;
+              line-height: 67px;
             }
 
-            @include sp-second(){
-              font-size: 14px;
-              height: 60px;
-              line-height:60px;
-            }
+      
          
         }/*a*/
     }/*btn*/
@@ -669,6 +706,12 @@ body{
         font-weight: bold;
         font-size: 18px;
         letter-spacing: 0.45px;
+
+        @include sp{
+          font-size: 16px;
+          margin-top: 18px;
+          margin-bottom: 21px;
+        }
     }
 
     .contact_tel{
@@ -692,7 +735,7 @@ body{
             font-size: 26px;
 
             @include tab{
-              font-size: 20px;
+              font-size: 26px;
             }
 
           .number{
@@ -706,6 +749,9 @@ body{
 
             @include tab{
               font-size: 22px;
+            }
+            @include sp{
+              font-size: 28px;
             }
 
             img{

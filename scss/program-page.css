@@ -731,21 +731,37 @@ html body header .header_wrap .btn-gnavi.hb-open span:nth-of-type(3) {
 }
 
 html body .mainvisual {
-  background-image: url(../img/service/mv-mainvisual.png);
-  background-size: contain;
+  background-image: url(../img/common/mainvisual-2.png);
+  background-size: cover;
   background-repeat: no-repeat;
   height: 45vw;
   width: 100%;
   position: relative;
 }
 
+@media (max-width: 560px) {
+  html body .mainvisual {
+    background-size: 100% 100%;
+    height: 395px;
+    background-image: url(../img/common/mainvisual-2_sp.png);
+  }
+}
+
 html body .mainvisual_wrap {
   background-image: url(../img/service/mv-background.png);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 45vw;
   width: 100%;
   /*mv-inner-teext*/
+}
+
+@media (max-width: 560px) {
+  html body .mainvisual_wrap {
+    background-size: 100% 100%;
+    height: 395px;
+    background-image: url(../img/common/mv-background_sp.png);
+  }
 }
 
 html body .mainvisual_wrap .mv_inner_text {
@@ -784,10 +800,10 @@ html body .mainvisual_wrap .mv_inner_text {
 
 @media (max-width: 560px) {
   html body .mainvisual_wrap .mv_inner_text {
-    max-width: 280px;
+    max-width: 306px;
     width: 90%;
-    padding: 25px 0px;
-    background-size: 250px 72px;
+    padding: 75px 0px 79px;
+    background-size: 240px 170px;
   }
 }
 
@@ -796,9 +812,15 @@ html body .mainvisual_wrap .mv_inner_text .top_inner_title {
   font-size: 42px;
 }
 
+@media (max-width: 1024px) {
+  html body .mainvisual_wrap .mv_inner_text .top_inner_title {
+    font-size: 38px;
+  }
+}
+
 @media (max-width: 768px) {
   html body .mainvisual_wrap .mv_inner_text .top_inner_title {
-    font-size: 30px;
+    font-size: 27px;
   }
 }
 
@@ -847,7 +869,7 @@ html body .intro_top .intro_wrap .top_text {
 
 @media (max-width: 768px) {
   html body .intro_top .intro_wrap .top_text {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -867,7 +889,9 @@ html body .content {
 
 @media (max-width: 560px) {
   html body .content {
-    margin-top: 65px;
+    margin-top: 35px;
+    margin-right: 15px;
+    margin-left: 15px;
   }
 }
 
@@ -879,6 +903,7 @@ html body .content_box {
   -webkit-box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.16);
   border-radius: 41px;
+  /*pc*/
   /*pc*/
   /*pc*/
   /*h2*/
@@ -899,6 +924,12 @@ html body .content_box {
   }
 }
 
+@media (max-width: 425px) {
+  html body .content_box {
+    padding: 67px 18px 10px 18px;
+  }
+}
+
 html body .content_box h2 {
   border-radius: 12px;
   background-image: url(../img/common/title_blue.png);
@@ -912,22 +943,33 @@ html body .content_box h2 {
   max-width: 880px;
   width: 100%;
   margin: 0 auto;
+  margin-bottom: 34px;
   background-size: cover;
 }
 
 @media (max-width: 768px) {
   html body .content_box h2 {
     width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    padding-left: 20px;
+    background-size: 100% 100%;
   }
 }
 
 @media (max-width: 560px) {
   html body .content_box h2 {
-    height: 56px;
-    line-height: 56px;
-    font-size: 22px;
-    padding-left: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    height: 107px;
+    line-height: 107px;
   }
+}
+
+html body .content_box #first_title {
+  margin-bottom: 0px;
 }
 
 html body .content_box .company_table {
@@ -937,8 +979,20 @@ html body .content_box .company_table {
   /*tr*/
 }
 
+@media (max-width: 560px) {
+  html body .content_box .company_table {
+    border-spacing: 5px 1px;
+  }
+}
+
 html body .content_box .company_table .top_table {
   height: 61px;
+}
+
+@media (max-width: 560px) {
+  html body .content_box .company_table .top_table {
+    height: 21px;
+  }
 }
 
 html body .content_box .company_table tr {
@@ -952,10 +1006,22 @@ html body .content_box .company_table tr .category_list {
   font-size: 20px;
 }
 
+@media (max-width: 560px) {
+  html body .content_box .company_table tr .category_list {
+    font-size: 12px;
+  }
+}
+
 html body .content_box .company_table tr .price_list {
   background-color: #6CCBC8;
   color: white;
   font-size: 20px;
+}
+
+@media (max-width: 560px) {
+  html body .content_box .company_table tr .price_list {
+    font-size: 12px;
+  }
 }
 
 html body .content_box .company_table tr th {
@@ -968,6 +1034,13 @@ html body .content_box .company_table tr th {
   text-align: center;
   line-height: 1.8;
   letter-spacing: 2.6px;
+}
+
+@media (max-width: 560px) {
+  html body .content_box .company_table tr th {
+    font-size: 10px;
+    padding: 6px 0 5px 0px;
+  }
 }
 
 html body .content_box .company_table tr td {
@@ -985,6 +1058,12 @@ html body .content_box .company_table tr td {
 @media (max-width: 1024px) {
   html body .content_box .company_table tr td {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 560px) {
+  html body .content_box .company_table tr td {
+    font-size: 7px;
   }
 }
 
@@ -1021,7 +1100,7 @@ html body .content_box .program .item {
   html body .content_box .program .item {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 84px;
   }
 }
 
@@ -1032,9 +1111,6 @@ html body .content_box .program .item .item_text_block {
 @media (max-width: 768px) {
   html body .content_box .program .item .item_text_block {
     width: 100%;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
     margin-bottom: 24px;
   }
 }
@@ -1044,6 +1120,12 @@ html body .content_box .program .item .item_text_block h3 {
   color: #F79E46;
   font-weight: 900;
   letter-spacing: 0.5px;
+}
+
+@media (max-width: 560px) {
+  html body .content_box .program .item .item_text_block h3 {
+    font-size: 20px;
+  }
 }
 
 html body .content_box .program .item img {
@@ -1056,11 +1138,8 @@ html body .content_box .program .item img {
   html body .content_box .program .item img {
     width: 100%;
     height: 40%;
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 26px;
   }
 }
 
@@ -1077,6 +1156,7 @@ html body .contact_wrap {
   html body .contact_wrap {
     margin-bottom: 70px;
     margin-top: 90px;
+    text-align: center;
   }
 }
 
@@ -1095,13 +1175,22 @@ html body .contact_wrap .contact_title {
 
 @media (max-width: 560px) {
   html body .contact_wrap .contact_title {
-    font-size: 20px;
+    display: none;
   }
 }
 
-@media (max-width: 425px) {
-  html body .contact_wrap .contact_title {
-    font-size: 18px;
+html body .contact_wrap .contact_title_sp {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  html body .contact_wrap .contact_title_sp {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 16px;
+    width: 100%;
+    line-height: 1.6;
+    font-weight: 500;
   }
 }
 
@@ -1122,14 +1211,8 @@ html body .contact_wrap .btn {
 
 @media (max-width: 560px) {
   html body .contact_wrap .btn {
-    width: 80%;
+    width: 92.5%;
     margin: 0 auto;
-  }
-}
-
-@media (max-width: 425px) {
-  html body .contact_wrap .btn {
-    width: 280px;
   }
 }
 
@@ -1158,16 +1241,8 @@ html body .contact_wrap .btn a {
 @media (max-width: 560px) {
   html body .contact_wrap .btn a {
     font-size: 20px;
-    height: 65px;
-    line-height: 65px;
-  }
-}
-
-@media (max-width: 425px) {
-  html body .contact_wrap .btn a {
-    font-size: 14px;
-    height: 60px;
-    line-height: 60px;
+    height: 67px;
+    line-height: 67px;
   }
 }
 
@@ -1183,6 +1258,14 @@ html body .contact_wrap .reservation {
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 0.45px;
+}
+
+@media (max-width: 560px) {
+  html body .contact_wrap .reservation {
+    font-size: 16px;
+    margin-top: 18px;
+    margin-bottom: 21px;
+  }
 }
 
 html body .contact_wrap .contact_tel {
@@ -1217,7 +1300,7 @@ html body .contact_wrap .contact_tel p {
 
 @media (max-width: 768px) {
   html body .contact_wrap .contact_tel p {
-    font-size: 20px;
+    font-size: 26px;
   }
 }
 
@@ -1236,6 +1319,12 @@ html body .contact_wrap .contact_tel p .number {
 @media (max-width: 768px) {
   html body .contact_wrap .contact_tel p .number {
     font-size: 22px;
+  }
+}
+
+@media (max-width: 560px) {
+  html body .contact_wrap .contact_tel p .number {
+    font-size: 28px;
   }
 }
 

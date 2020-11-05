@@ -30,7 +30,6 @@ $sp-second: 425px;  // スマホ
       @content;
     }
   }
-
   @mixin h2_title {
     border-radius: 12px;
     background-image: url(../img/common/title_blue.png);
@@ -44,20 +43,26 @@ $sp-second: 425px;  // スマホ
     max-width: 880px;
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 34px;
     background-size: cover;
+
 
     @include tab{
       width: 100%;
+      height: 50px;
+      line-height: 50px;
+      font-size: 22px;
+      padding-left: 20px;
+      background-size: 100% 100%;
     }
 
     @include sp{
-      height: 56px;
-      line-height: 56px;
-      font-size: 22px;
-      padding-left: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      padding-left: 0px;
+      height: 107px;
+      line-height: 107px;
     }
-
-
 }
 
 html{
@@ -406,20 +411,33 @@ body{
   }/*header*/
 
   .mainvisual{
-    background-image: url(../img/service/mv-mainvisual.png);
-    background-size: contain;
+    background-image: url(../img/common/mainvisual-2.png);
+    background-size: cover;
     background-repeat: no-repeat;
     height: 45vw;
     width: 100%;
     position: relative;
 
+    @include sp(){
+      background-size: 100% 100%;
+      height: 395px;
+      background-image: url(../img/common/mainvisual-2_sp.png);
+    }
+
 
     &_wrap{
       background-image: url(../img/service/mv-background.png);
-      background-size: contain;  
+      background-size: cover;  
       background-repeat: no-repeat;
       height: 45vw;
       width: 100%;
+
+
+      @include sp(){
+        background-size: 100% 100%;
+        height: 395px;
+        background-image: url(../img/common/mv-background_sp.png);
+      }
 
       .mv_inner_text{
         background-color: #FFFFFF;
@@ -451,10 +469,10 @@ body{
 
 
         @include sp{
-          max-width: 280px;
+          max-width: 306px;
           width: 90%;
-          padding: 25px 0px;
-          background-size: 250px 72px;
+          padding: 75px 0px 79px;
+          background-size: 240px 170px;
         }
 
 
@@ -462,14 +480,17 @@ body{
           font-weight: 900;
           font-size: 42px;
 
+          @include pc{
+            font-size: 38px;
+          }
+
           @include tab{
-            font-size: 30px;
+            font-size: 27px;
           }
 
           @include sp{
             font-size: 24px;
           }
-
         }/*inner_title*/
       }/*mv-inner-teext*/
     }
@@ -506,13 +527,14 @@ body{
             }
 
             @include tab{
-              font-size: 18px;
+              font-size: 16px;
             }
 
         }/*text*/
     }/*wrap*/
   }/*introtop*/
   
+
 
 
   .content{
@@ -526,7 +548,9 @@ body{
     }
 
     @include sp{
-      margin-top: 65px; 
+      margin-top: 35px; 
+      margin-right: 15px;
+      margin-left: 15px;  
     }
 
     &_box{
@@ -545,10 +569,20 @@ body{
           padding: 67px 30px 70px 30px;
         }/*pc*/
 
+        @include sp-second(){
+          padding: 67px 18px 10px 18px;
+        }/*pc*/
+
+
           h2{
               @include h2_title;
 
           }/*h2*/
+
+          #first_title{
+            margin-bottom: 0px;
+
+          }
 
 
           .company_table{
@@ -556,10 +590,18 @@ body{
               margin-bottom: 82px;
               border-spacing: 13px 3px;
 
+              @include sp{
+                border-spacing: 5px 1px;
+              }
+
 
 
               .top_table{
                   height: 61px;
+
+                  @include sp{
+                    height: 21px;
+                  }
               }
 
               tr{
@@ -569,6 +611,11 @@ body{
                     background-color: #6CCBC8;
                     color: white;
                     font-size: 20px;
+
+                    @include sp{
+                      font-size: 12px;
+
+                    }
                 }/*list*/
 
                 .price_list{
@@ -576,6 +623,9 @@ body{
                     color: white;
                     font-size: 20px;
 
+                    @include sp{
+                      font-size: 12px;
+                    }
                 }
 
                   th{
@@ -588,6 +638,11 @@ body{
                       text-align: center;
                       line-height: 1.8;
                       letter-spacing: 2.6px;
+
+                      @include sp{
+                        font-size: 10px;
+                        padding: 6px 0 5px 0px;
+                      }
 
                   }
 
@@ -604,6 +659,10 @@ body{
                     @include pc{
                       font-size: 15px;
                     }/*pc*/
+
+                    @include sp{
+                      font-size: 7px;
+                    }
                 }
               }/*tr*/
           }/*company_table*/
@@ -630,15 +689,15 @@ body{
 
                   @include tab{
                     flex-wrap:wrap;
-                    margin-bottom: 30px;
+                    margin-bottom: 84px;
                   }/*tab*/
+                  
 
                   .item_text_block{
                       width: 587px;
 
                       @include tab{
                         width: 100%;
-                        order: 1;
                         margin-bottom: 24px;
                       }
 
@@ -647,6 +706,11 @@ body{
                         color: #F79E46;
                         font-weight: 900;
                         letter-spacing: 0.5px;
+
+                        @include sp{
+                          font-size: 20px;
+                        }
+
                       }
 
                       .text{
@@ -663,9 +727,8 @@ body{
                     @include tab{
                       width: 100%;
                       height: 40%;
-                      order: 2;
                       margin: 0 auto;
-                      margin-bottom: 20px;
+                      margin-bottom: 26px;
                     }
                   }
                   
@@ -678,6 +741,7 @@ body{
   }/*content*/
 
 
+
   .contact_wrap{
     margin-bottom: 94px;
     margin-top: 109px;
@@ -685,6 +749,7 @@ body{
     @include sp{
       margin-bottom: 70px;
       margin-top: 90px;
+      text-align: center;
     }
 
     .contact_title{
@@ -697,14 +762,26 @@ body{
       }/*tab*/
 
       @include sp{
-        font-size: 20px;
+        display: none;
       }
 
-      @include sp-second(){
-        font-size: 18px;
+
+    }
+
+    .contact_title_sp{
+      display: none;
+
+      @include sp{
+        display: block;
+        font-size: 20px;
+        margin-bottom: 16px;
+        width: 100%;
+        line-height: 1.6;
+        font-weight: 500;
       }
 
     }
+
 
     .btn{
         width: 708px;
@@ -719,12 +796,11 @@ body{
         }
 
         @include sp{
-          width: 80%;
+          width: 92.5%;
           margin: 0 auto;
         }
 
         @include sp-second(){
-          width: 280px;
         }
 
         a{
@@ -748,15 +824,11 @@ body{
 
             @include sp{
               font-size: 20px;
-              height: 65px;
-              line-height: 65px;
+              height: 67px;
+              line-height: 67px;
             }
 
-            @include sp-second(){
-              font-size: 14px;
-              height: 60px;
-              line-height:60px;
-            }
+      
          
         }/*a*/
     }/*btn*/
@@ -772,6 +844,12 @@ body{
         font-weight: bold;
         font-size: 18px;
         letter-spacing: 0.45px;
+
+        @include sp{
+          font-size: 16px;
+          margin-top: 18px;
+          margin-bottom: 21px;
+        }
     }
 
     .contact_tel{
@@ -795,7 +873,7 @@ body{
             font-size: 26px;
 
             @include tab{
-              font-size: 20px;
+              font-size: 26px;
             }
 
           .number{
@@ -809,6 +887,9 @@ body{
 
             @include tab{
               font-size: 22px;
+            }
+            @include sp{
+              font-size: 28px;
             }
 
             img{
